@@ -26,7 +26,7 @@ public class bai3 {
         int min = arr[0];
         System.out.println("phan tu nho nhat trong mang la: " + min);
 
-        int tong = 0;
+        int tong = 0;// test
         int tam = 0;
         for (int value : arr) {
             if (value % 3 == 0) {
