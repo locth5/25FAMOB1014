@@ -1,5 +1,4 @@
-package labs4.bai1;
-
+package bai1;
 import java.util.Scanner;
 
 public class Sanpham {
