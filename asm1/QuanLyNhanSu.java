@@ -20,21 +20,47 @@ public class QuanLyNhanSu {
             System.out.println("9. Xuất 5 nhân viên có thu nhập cao nhất");
             System.out.println("0. Thoát");
             System.out.print("Chọn chức năng: ");
+
             choice = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); // bỏ ký tự xuống dòng
 
             switch (choice) {
-                case 1 -> System.out.println(">> Nhập danh sách nhân viên");
-                case 2 -> System.out.println(">> Xuất danh sách nhân viên");
-                case 3 -> System.out.println(">> Tìm nhân viên theo mã");
-                case 4 -> System.out.println(">> Xóa nhân viên theo mã");
-                case 5 -> System.out.println(">> Cập nhật thông tin nhân viên");
-                case 6 -> System.out.println(">> Tìm nhân viên theo khoảng lương");
-                case 7 -> System.out.println(">> Sắp xếp nhân viên theo họ và tên");
-                case 8 -> System.out.println(">> Sắp xếp nhân viên theo thu nhập");
-                case 9 -> System.out.println(">> Xuất 5 nhân viên có thu nhập cao nhất");
-                case 0 -> System.out.println("Thoát chương trình.");
-                default -> System.out.println("Lựa chọn không hợp lệ!");
+                case 1:
+                    System.out.println(">> Nhập danh sách nhân viên");
+                    break;
+                case 2:
+                    System.out.println(">> Xuất danh sách nhân viên");
+                    break;
+                case 3:
+                    System.out.println(">> Tìm nhân viên theo mã");
+                    break;
+                case 4:
+                    System.out.println(">> Xóa nhân viên theo mã");
+                    break;
+                case 5:
+                    System.out.println(">> Cập nhật thông tin nhân viên");
+                    break;
+                case 6:
+                    System.out.println(">> Tìm nhân viên theo khoảng lương");
+                    break;
+                case 7:
+                    System.out.println(">> Sắp xếp nhân viên theo họ và tên");
+                    break;
+                case 8:
+                    System.out.println(">> Sắp xếp nhân viên theo thu nhập");
+                    break;
+                case 9:
+                    System.out.println(">> Xuất 5 nhân viên có thu nhập cao nhất");
+                    break;
+                case 0:
+                    System.out.println(">> Thoát chương trình.");
+                    break;
+                default:
+                    System.out.println(">> Lựa chọn không hợp lệ!");
+            }
+
+            if (choice != 0) {
+                System.out.println("\n------------------------------\n");
             }
 
         } while (choice != 0);
