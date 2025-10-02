@@ -11,18 +11,18 @@ public class QuanLyNhanSu {
         int choice;
 
         do {
-            System.out.println("\n===== MENU QUẢN LÝ NHÂN SỰ =====");
-            System.out.println("1. Nhập danh sách nhân viên");
-            System.out.println("2. Xuất danh sách nhân viên");
-            System.out.println("3. Tìm nhân viên theo mã");
-            System.out.println("4. Xóa nhân viên theo mã");
-            System.out.println("5. Cập nhật thông tin nhân viên");
-            System.out.println("6. Tìm nhân viên theo khoảng lương");
-            System.out.println("7. Sắp xếp nhân viên theo họ và tên");
-            System.out.println("8. Sắp xếp nhân viên theo thu nhập");
-            System.out.println("9. Xuất 5 nhân viên có thu nhập cao nhất");
-            System.out.println("0. Thoát");
-            System.out.print("Chọn chức năng: ");
+            System.out.println("\n===== MENU QUAN LY NHAN SU =====");
+            System.out.println("1. Nhap danh sach nhan vien");
+            System.out.println("2. Xuat danh sach nhan vien");
+            System.out.println("3. Tim nhan vien theo ma");
+            System.out.println("4. Xoa nhan vien theo ma");
+            System.out.println("5. Cap nhat thong tin nhan vien");
+            System.out.println("6. Tim nhan vien theo khoang luong");
+            System.out.println("7. Sap xep nhan vien theo ho va ten");
+            System.out.println("8. Sap xep nhan vien theo thu nhap");
+            System.out.println("9. Xuat 5 nhan vien co thu nhap cao nhat");
+            System.out.println("0. Thoat");
+            System.out.print("Chon chuc nang: ");
 
             choice = sc.nextInt();
             sc.nextLine(); // bỏ ký tự xuống dòng
@@ -35,31 +35,31 @@ public class QuanLyNhanSu {
                     xuatDanhSach();
                     break;
                 case 3:
-                    System.out.println(">> Tìm nhân viên theo mã (chưa làm)");
+                    System.out.println(">> Tim nhan vien theo ma (chua lam)");
                     break;
                 case 4:
-                    System.out.println(">> Xóa nhân viên theo mã (chưa làm)");
+                    System.out.println(">> Xoa nhan vien theo ma (chua lam)");
                     break;
                 case 5:
-                    System.out.println(">> Cập nhật thông tin nhân viên (chưa làm)");
+                    System.out.println(">> Cap nhat thong tin nhan vien (chua lam)");
                     break;
                 case 6:
-                    System.out.println(">> Tìm nhân viên theo khoảng lương (chưa làm)");
+                    System.out.println(">> Tim nhan vien theo khoang luong (chua lam)");
                     break;
                 case 7:
-                    System.out.println(">> Sắp xếp nhân viên theo họ và tên (chưa làm)");
+                    System.out.println(">> Sap xep nhan vien theo ho va ten (chua lam)");
                     break;
                 case 8:
-                    System.out.println(">> Sắp xếp nhân viên theo thu nhập (chưa làm)");
+                    System.out.println(">> Sap xep nhan vien theo thu nhap (chua lam)");
                     break;
                 case 9:
-                    System.out.println(">> Xuất 5 nhân viên có thu nhập cao nhất (chưa làm)");
+                    System.out.println(">> Xuat 5 nhan vien co thu nhap cao nhat (chua lam)");
                     break;
                 case 0:
-                    System.out.println(">> Thoát chương trình.");
+                    System.out.println(">> Thoat chuong trinh.");
                     break;
                 default:
-                    System.out.println(">> Lựa chọn không hợp lệ!");
+                    System.out.println(">> Lua chon khong hop le!");
             }
 
             if (choice != 0) {
@@ -73,37 +73,37 @@ public class QuanLyNhanSu {
 
     // ===== Y1: Nhập danh sách nhân viên =====
     public static void nhapDanhSach() {
-        System.out.print("Nhập số lượng nhân viên: ");
+        System.out.print("Nhap so luong nhan vien: ");
         int n = sc.nextInt();
         sc.nextLine();
 
         for (int i = 0; i < n; i++) {
-            System.out.println("\n-- Nhân viên thứ " + (i + 1));
-            System.out.println("Chọn loại: 1. Hành chính | 2. Tiếp thị | 3. Trưởng phòng");
+            System.out.println("\n-- Nhan vien thu " + (i + 1));
+            System.out.println("Chon loai : 1. Hanh chinh | 2. Tiep thi | 3. Truong phong");
             int loai = sc.nextInt();
             sc.nextLine();
 
-            System.out.print("Mã NV: ");
+            System.out.print("MA NV: ");
             String ma = sc.nextLine();
-            System.out.print("Họ tên: ");
+            System.out.print("HO TEN: ");
             String hoTen = sc.nextLine();
-            System.out.print("Lương cơ bản: ");
+            System.out.print("LUONG CO BAN: ");
             double luong = sc.nextDouble();
 
             if (loai == 1) {
                 dsNhanVien.add(new NhanVienHanhChinh(ma, hoTen, luong));
             } else if (loai == 2) {
-                System.out.print("Doanh số: ");
+                System.out.print("DDOANH SO: ");
                 double ds = sc.nextDouble();
-                System.out.print("Tỉ lệ huê hồng: ");
+                System.out.print("TI LE HOA HONG(NHAP%): ");
                 double hh = sc.nextDouble();
                 dsNhanVien.add(new NhanVienTiepThi(ma, hoTen, luong, ds, hh));
             } else if (loai == 3) {
-                System.out.print("Lương trách nhiệm: ");
+                System.out.print("LUONG TRACH NHIEM: ");
                 double tn = sc.nextDouble();
                 dsNhanVien.add(new TruongPhong(ma, hoTen, luong, tn));
             } else {
-                System.out.println("Loại nhân viên không hợp lệ, nhập lại!");
+                System.out.println("LOAI NHAN VIEN KHONG HOP LE, NHAP LAI!");
                 i--;
             }
         }
@@ -112,9 +112,9 @@ public class QuanLyNhanSu {
     // ===== Y2: Xuất danh sách nhân viên =====
     public static void xuatDanhSach() {
         if (dsNhanVien.isEmpty()) {
-            System.out.println(">> Chưa có nhân viên nào!");
+            System.out.println(">> CHUA CO NHAN VIEN NAO!");
         } else {
-            System.out.println("\n===== DANH SÁCH NHÂN VIÊN =====");
+            System.out.println("\n===== DANH SACH NHAN VIEN =====");
             for (NhanVien nv : dsNhanVien) {
                 nv.xuatThongTin();
             }
